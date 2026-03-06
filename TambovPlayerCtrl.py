@@ -9,14 +9,12 @@ import signal
 
 # ==================== НАСТРОЙКИ =====================
 
-BUTTON_LINES = [2, 8, 5, 6]  # wiringPi номера пинов
-LED_LINES = [16, 13, 10, 9]
+BUTTON_LINES = [2, 8]  # wiringPi номера пинов
+LED_LINES = [16, 13]
 
 SOUNDS = [
     "1.wav",
-    "2.wav",
-    "3.wav",
-    "4.wav"
+    "2.wav"
 ]
 
 DEBOUNCE_TIME = 0.25
