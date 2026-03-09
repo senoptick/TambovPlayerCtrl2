@@ -49,11 +49,11 @@ def play_sound(sound_file, index):
         print(f"   → Запускаю: {sound_file}")
 
         # выключаем предыдущую подсветку
-        if current_led is not None and current_led != led_pin:
+        if current_led is not None:
             wiringpi.digitalWrite(current_led, 0)
 
         # останавливаем старый звук
-        if current_player is not None:
+        if current_player is not None or current_led == led_pin:
             try:
                 os.killpg(current_player.pid, signal.SIGTERM)
                 current_player.wait(timeout=0.5)
