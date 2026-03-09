@@ -13,7 +13,7 @@ BUTTON_LINES = [2, 8]  # wiringPi номера пинов
 LED_LINES = [16, 13]
 
 SOUNDS = [
-    "/content/1.wav",
+    "/content/1.mp3",
     "/content/2.wav"
 ]
 
