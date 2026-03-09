@@ -8,13 +8,19 @@ import os
 import signal
 
 # ==================== НАСТРОЙКИ =====================
+def find_sound(name):
+    for ext in [".mp3", ".wav"]:
+        path = f"/content/{name}{ext}"
+        if os.path.exists(path):
+            return path
+    raise FileNotFoundError(f"Файл {name}.mp3 или {name}.wav не найден")
 
 BUTTON_LINES = [2, 8]  # wiringPi номера пинов
 LED_LINES = [16, 13]
 
 SOUNDS = [
-    "/content/1.mp3",
-    "/content/2.wav"
+    find_sound("1"),
+    find_sound("2")
 ]
 
 DEBOUNCE_TIME = 0.25
