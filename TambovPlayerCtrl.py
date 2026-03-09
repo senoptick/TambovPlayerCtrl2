@@ -13,8 +13,8 @@ BUTTON_LINES = [2, 8]  # wiringPi номера пинов
 LED_LINES = [16, 13]
 
 SOUNDS = [
-    "1.wav",
-    "2.wav"
+    "content/1.wav",
+    "content/2.wav"
 ]
 
 DEBOUNCE_TIME = 0.25
