@@ -29,6 +29,15 @@ current_player = None
 current_led = None
 
 # ==================== ФУНКЦИИ =====================
+def get_player(sound_file):
+
+    if sound_file.endswith(".mp3"):
+        return ["mpg123", sound_file]
+
+    if sound_file.endswith(".wav"):
+        return ["aplay", sound_file]
+
+    return ["ffplay", "-nodisp", "-autoexit", sound_file]
 
 def play_sound(sound_file, index):
 
@@ -68,7 +77,7 @@ def play_sound(sound_file, index):
 
         # запускаем звук
         current_player = subprocess.Popen(
-            ["aplay", sound_file],
+            get_player(sound_file),
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
             preexec_fn=os.setsid
