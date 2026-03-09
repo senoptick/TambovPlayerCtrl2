@@ -60,6 +60,8 @@ def play_sound(sound_file, index):
             except:
                 pass
 
+        if led_pin == current_led:
+            return
         # включаем новую подсветку
         wiringpi.digitalWrite(led_pin, 1)
         current_led = led_pin
