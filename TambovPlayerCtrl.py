@@ -74,13 +74,10 @@ def play_sound(sound_file, index):
 
     # ждём окончания звука
 
-        player = current_player
     
-    # ждём окончания
-    player.wait()
     
     with audio_lock:
-        if current_player == player and current_led == led_pin:
+        if current_led == led_pin:
             wiringpi.digitalWrite(led_pin, 0)
             current_led = None
 # ==================== ОСНОВНОЙ КОД =====================
